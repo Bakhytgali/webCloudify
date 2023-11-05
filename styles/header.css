@@ -1,0 +1,12 @@
+header {
+    font-family: 'Poppins', sans-serif;
+    background-color: #121212;
+}
+
+a.navbar-brand {
+    color: #00AC8D;
+}
+
+i.fa-user {
+    opacity: 60%;
+}

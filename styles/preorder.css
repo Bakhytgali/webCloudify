@@ -1,0 +1,40 @@
+form {
+    height: 92.5vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #121212;
+}
+
+form p {
+    color: #00AC8D;
+}
+
+.form-body {
+    margin-top: 30px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    row-gap: 40px;
+}
+
+input[type="text"] {
+    background-color: inherit;
+    color: #fff;
+    border: 1px solid #00AC8D;
+    border-radius: 10px;
+    padding: 12px 45px;
+}
+
+input[type="text"]:focus {
+    outline: none;
+}
+
+button {
+    outline: none;
+    background-color: #00AC8D;
+    border: none;
+    padding: 10px 25px;
+    border-radius: 10px;
+}

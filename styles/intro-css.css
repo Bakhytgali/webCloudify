@@ -1,0 +1,103 @@
+div.intro {
+    padding-top: 150px;
+    height: 80vh;
+}
+
+h1.greet-title {
+    font-family: 'Poppins', sans-serif;
+    font-size: 68px;
+    font-weight: 800;
+}
+
+p.greet-subtitle {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    color: #00AC8D;
+    font-size: 28px;
+}
+
+.intro>button {
+    background-color: #00AC8D;
+    color: #fff;
+    font-family: 'Poppins', sans-serif;
+}
+
+section#album-timer {
+    font-family: "Poppins", sans-serif;
+}
+
+.timer-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+
+    flex-wrap: wrap;
+
+    column-gap: 50px;
+}
+
+.timer {
+    font-size: 12px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+    text-align: center;
+}
+
+.timer-title {
+    font-size: 26px;
+}
+
+.timer-title span {
+    font-size: 20px;
+}
+
+.timer-subtitle {
+    font-size: 26px;
+}
+
+.timer-subtitle span {
+    color: #00AC8D;
+    font-size: 30px;
+}
+
+.buttons-wrapper {
+    display: flex;
+    column-gap: 20px;
+}
+
+button.remind {
+    background-color: #00AC8D;
+    color: #fff;
+}
+
+button.preorder {
+    background-color: inherit;
+    color: #00AC8D;
+    border: 2px #00AC8D solid;
+}
+
+video {
+    width: 45%;
+}
+
+@media (max-width:1000px) {
+    div.intro {
+        padding-top: 0px;
+    }
+
+    h1.greet-title {
+        font-size: 48px;
+    }
+
+    p.greet-subtitle {
+        font-size: 22px;
+    }
+
+    .album-video-cover-wrapper {
+        flex-direction: column;
+    }
+}

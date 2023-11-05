@@ -1,0 +1,55 @@
+body {
+    color: #fff;
+    overflow-x: hidden;
+    font-family: "Poppins", sans-serif;
+}
+
+main#main {
+    background-color: #121212;
+    padding-top: 100px;
+}
+
+#albums-carousel,
+#footer {
+    background-color: #00AC8D;
+    color: #fff;
+}
+
+.review-line {
+    column-gap: 80px;
+}
+
+h2.reviews {
+    font-family: 'Poppins', sans-serif;
+}
+
+.card-body {
+    font-family: 'Poppins';
+}
+
+.card-body a {
+    background-color: #00AC8D;
+    outline: none;
+    border: none;
+}
+
+.card-body a:hover {
+    background-color: #00AC8D;
+    outline: none;
+    border: none;
+}
+
+
+#footer p {
+    padding-bottom: 5px;
+}
+
+#footer a {
+    text-decoration: none;
+    color: inherit;
+    transition: .3s linear;
+}
+
+#footer a:hover {
+    text-decoration: underline;
+}

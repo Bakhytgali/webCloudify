@@ -1,0 +1,32 @@
+body {
+    background-color: #121212;
+    color: #fff;
+    font-family: 'Poppins', sans-serif;
+}
+
+.main-content {
+    padding-top: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: column;
+}
+
+.account-info {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+}
+
+input[type="text"] {
+    background-color: inherit;
+    color: #fff;
+    border: 1px solid #00AC8D;
+    border-radius: 10px;
+    padding: 12px 45px;
+}
+
+input[type="text"]:focus {
+    outline: none;
+}
