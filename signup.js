@@ -1,26 +1,62 @@
-const submitform = document.querySelector("#submitform");
+const nameInput = document.querySelector("#name");
+const surnameInput = document.querySelector("#surname");
+const emailInput = document.querySelector("#email");
+const submitBtn = document.querySelector("#submitform");
 
-const error = document.querySelector(".error");
-error.style.color = "red";
+const nameSurnamePattern = /^[A-Z][a-z]*$/;
+var nameIsCorrect = false;
+var surnameIsCorrect = false;
 
-submitform.addEventListener("click", () => {
-    const name = document.querySelector("#name").value;
-    const surname = document.querySelector("#surname").value;
-    const email = document.querySelector("#email").value;
-    const namePattern = /^[A-Z][a-zA-Z]*$/;
-    const surnamePattern = /^[A-Z][a-zA-Z]*$/;
-    const emailPattern = /^[a-z]+@(email\.com|gmail\.com|mail\.ru|outlook\.com|astanait\.edu\.kz)$/;
-    if (!namePattern.test(name)) {
-        error.textContent = "Name is not valid. No numbers, symbols & capital first letter";
-    } else if (!surnamePattern.test(surname)) {
-        error.textContent = "Surname is not valid. Name is not valid (No numbers, symbols & capital first letter)"
-    } else if (!emailPattern.test(email)) {
-        error.textContent = "Email is not valid. Should include @something.com in the end";
+const emailPattern = /^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$/;
+var emailIsCorrect = false;
+
+nameInput.addEventListener("keypress", () => {
+    if (nameSurnamePattern.test(nameInput.value)) {
+        nameIsCorrect = true;
     } else {
-        error.style.color = "#fff";
-        error.textContent = `You've been signed up! Welcome, ${name}`;
-        setInterval(() => {
-            window.open("./index.html", "_blank");
-        }, 3000)
+        nameIsCorrect = false;
+        document.getElementsByClassName("error")[0].innerHTML = "Invalid name";
     }
+    toggleSubmitButton();
 });
+
+surnameInput.addEventListener("keypress", () => {
+    if (nameSurnamePattern.test(surnameInput.value)) {
+        surnameIsCorrect = true;
+        document.getElementsByClassName("error")[0].textContent = "";
+    } else {
+        surnameIsCorrect = false;
+        document.getElementsByClassName("error")[0].innerHTML = "Invalid surname";
+    }
+    toggleSubmitButton();
+});
+
+emailInput.addEventListener("keypress", () => {
+    if (emailPattern.test(emailInput.value)) {
+        emailIsCorrect = true;
+        document.getElementsByClassName("error")[0].textContent = "";
+    } else {
+        emailIsCorrect = false;
+        document.getElementsByClassName("error")[0].innerHTML = "Invalid email";
+    }
+    toggleSubmitButton();
+});
+
+function toggleSubmitButton() {
+    if (nameIsCorrect && surnameIsCorrect && emailIsCorrect) {
+        submitBtn.removeAttribute("disabled");
+        document.getElementsByClassName("error")[0].textContent = "";
+    } else {
+        submitBtn.setAttribute("disabled", "disabled");
+    }
+}
+
+submitBtn.addEventListener("click", () => {
+    document.getElementsByClassName("error")[0].textContent = "You've been signed up!";
+    submitBtn.style.display = "none";
+    setInterval(function () {
+        window.open("./index.html", "_self");
+    }, 3000)
+});
+
+

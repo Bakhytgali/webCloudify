@@ -4,29 +4,47 @@ body {
     font-family: 'Poppins', sans-serif;
 }
 
-.main-content {
-    padding-top: 50px;
+h1.profile-title {
+    font-weight: 600;
+}
+
+.profile-info {
     display: flex;
-    align-items: center;
-    justify-content: space-between;
     flex-direction: column;
 }
 
-.account-info {
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    justify-content: center;
+.profile-info span {
+    color: #00AC8D;
 }
 
-input[type="text"] {
-    background-color: inherit;
-    color: #fff;
+.list-group-item {
+    background-color: #121212;
     border: 1px solid #00AC8D;
-    border-radius: 10px;
-    padding: 12px 45px;
+    margin: 5px;
+    padding: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
 }
 
-input[type="text"]:focus {
-    outline: none;
+.list-group-item.drag-song {
+    background-color: #121212;
+    border: 1px solid #00AC8D;
+    color: #00AC8D;
+    cursor: move;
+}
+
+.list-group-item:hover {
+    background-color: #00AC8D;
+    color: #fff;
+}
+
+.dropdown-toggle {
+    background-color: #00AC8D;
+    color: #121212;
+}
+
+@media(max-width: 767px) {
+    .tier-list {
+        margin-top: 20px;
+    }
 }

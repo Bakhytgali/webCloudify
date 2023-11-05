@@ -66,6 +66,7 @@ section#album-timer {
 
 .buttons-wrapper {
     display: flex;
+    align-items: baseline;
     column-gap: 20px;
 }
 
@@ -80,9 +81,6 @@ button.preorder {
     border: 2px #00AC8D solid;
 }
 
-video {
-    width: 45%;
-}
 
 @media (max-width:1000px) {
     div.intro {

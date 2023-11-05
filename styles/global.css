@@ -12,7 +12,7 @@ main#main {
 #albums-carousel,
 #footer {
     background-color: #00AC8D;
-    color: #fff;
+    color: #121212;
 }
 
 .review-line {
@@ -37,6 +37,11 @@ h2.reviews {
     background-color: #00AC8D;
     outline: none;
     border: none;
+}
+
+#submit-btn {
+    background-color: #121212;
+    color: #fff;
 }
 
 

@@ -16,6 +16,7 @@
         rel="stylesheet">
     <link rel="stylesheet" href="./styles/header.css">
     <link rel="stylesheet" href="./styles/intro-css.css">
+    <link rel="stylesheet" href="./styles/footer.css">
 </head>
 
 <body>
@@ -112,17 +113,15 @@
                         <span class="fw-bold">Melt My Eyez See Your Future</span>
                     </h4>
 
-                    <div class="album-video-cover-wrapper d-flex flex-column align-items-center">
+                    <div class="album-cover-wrapper d-flex flex-column align-items-center">
+                        <small>You can click the image to play the song</small>
                         <img src="./imgs/zel_vinyl.webp" alt="" width="50%" class="denzel-mm">
-                        <div class="buttons-wrapper">
-                            <button type="button" class="btn remind mt-5">Remind Me</button>
-                            <button type="button" class="btn preorder mt-5">Preorder</button>
-                        </div>
-                        <div class="will-remind"></div>
                     </div>
-
-
-
+                    <div class="buttons-wrapper">
+                        <button type="button" class="btn remind mt-5">Remind Me</button>
+                        <button type="button" class="btn preorder mt-5">Preorder</button>
+                    </div>
+                    <div class="will-remind"></div>
                 </div>
 
             </section>
@@ -188,7 +187,7 @@
                 </h2>
 
                 <div class="review-line d-flex align-items-center justify-content-center py-5 flex-wrap">
-                    <div class="col-md-3 card my-2 bg-dark" style="width: 16rem;">
+                    <div class="col-md-3 card my-1 bg-dark" style="width: 16rem;">
                         <img src="./imgs/album-cover.jpeg" class="card-img-top" alt="...">
                         <div class="card-body text-white">
                             <h5 class="card-title">Rakhat Bakhytgali</h5>
@@ -200,7 +199,7 @@
                         </div>
                     </div>
 
-                    <div class="col-md-3 card my-2 bg-dark" style="width: 16rem;">
+                    <div class="col-md-3 card my-1 bg-dark" style="width: 16rem;">
                         <img src="./imgs/newjeans.jpg" class="card-img-top" alt="...">
                         <div class="card-body text-white">
                             <h5 class="card-title">Bexultan Arakhan</h5>
@@ -213,7 +212,7 @@
                         </div>
                     </div>
 
-                    <div class="col-md-3 card my-2 bg-dark" style="width: 16rem;">
+                    <div class="col-md-3 card my-1 bg-dark" style="width: 16rem;">
                         <img src="./imgs/darkhan.jpg" class="card-img-top" alt="...">
                         <div class="card-body text-white">
                             <h5 class="card-title">Merei Issenbay</h5>
@@ -223,7 +222,7 @@
                         </div>
                     </div>
 
-                    <div class="col-md-3 card my-2 bg-dark" style="width: 16rem;">
+                    <div class="col-md-3 card my-1 bg-dark" style="width: 16rem;">
                         <img src="./imgs/anime_cover.jpg" class="card-img-top" alt="...">
                         <div class="card-body text-white">
                             <h5 class="card-title">Abylai Taitoleuov</h5>
@@ -245,7 +244,31 @@
             <h1 class="footer-brand pb-2 m-0 fw-bold">
                 Cloudify
             </h1>
-            <p class="m-0">Created by Rakhat Bakhytgali in 2023</p>
+
+            <h4 class="contact-us fw-bold">
+                Contact Us
+            </h4>
+
+            <div class="formAccepted">
+
+            </div>
+
+            <form id="formToFill">
+                <div class="form-group">
+                    <label for="exampleInputEmail1">Your Name</label>
+                    <input type="email" class="form-control" id="emailInput" aria-describedby="emailHelp"
+                        placeholder="Enter your name">
+                    <small id="emailHelp" class="form-text text-muted">We'll contact you as soon as we can.</small>
+                </div>
+                <div class="form-group">
+                    <label for="exampleFormControlTextarea1">Leave Your Commentary</label>
+                    <textarea class="form-control" id="commentaryInput" rows="3"></textarea>
+                </div>
+                <button type="button" class="btn mt-3" id="submit-btn">Submit</button>
+            </form>
+
+
+            <p class="m-0 mt-4">Created by Rakhat Bakhytgali in 2023</p>
             <p class="m-0">omgwtfwat@gmail.com</p>
             <p class="m-0 fw-bold">
                 <a href="https://t.me/rbkhtgl">Telegram</a>
