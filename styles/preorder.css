@@ -38,3 +38,9 @@ button {
     padding: 10px 25px;
     border-radius: 10px;
 }
+
+@media(max-width: 800px) {
+    input[type="text"] {
+        padding: 12px 30px;
+    }
+}
