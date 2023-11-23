@@ -7,6 +7,7 @@ a.navbar-brand {
     color: #00AC8D;
 }
 
-i.fa-user {
-    opacity: 60%;
+button#moveToTop {
+    background-color: #00AC8D;
+    display: none;
 }

@@ -21,6 +21,20 @@ var x = setInterval(function () {  // setInterval function
     }
 }, 1000);
 
+const moveToTop = document.querySelector("#moveToTop");
+
+window.onscroll = () => {
+    if (document.body.scrollTop > window.innerHeight || document.documentElement.scrollTop > window.innerHeight) {
+        moveToTop.style.display = "block"
+    } else {
+        moveToTop.style.display = "none";
+    }
+};
+
+moveToTop.addEventListener("click", () => {
+    document.documentElement.scrollTop = 0;
+});
+
 const reminderBtn = document.querySelector(".remind");
 
 reminderBtn.addEventListener("click", () => {
@@ -68,25 +82,6 @@ audio.addEventListener("ended", () => {
     stopSpinning();
 });
 
-function startSpinning() {
-    meltMyEyez.style.transition = "transform 2s linear";
-    rotateElement();
-}
-
-function stopSpinning() {
-    meltMyEyez.style.transition = "";
-    cancelAnimationFrame(animationFrameId);
-}
-
-function rotateElement() {
-    rotation += 0.2;
-    meltMyEyez.style.transform = `rotate(${rotation}deg)`;
-
-    if (pressed) {
-        animationFrameId = requestAnimationFrame(rotateElement);
-    }
-}
-
 meltMyEyez.addEventListener("mouseover", () => {
     meltMyEyez.style.transition = ".5s linear ease-in-out";
     meltMyEyez.style.transform = "rotate(3deg)";
@@ -105,9 +100,6 @@ document.getElementById("submit-btn").addEventListener("click", () => {
         document.querySelector(".formAccepted").innerHTML = "We've received your message! Will contact you ASAP."
     }
 });
-
-// document.getElementById("formToFill").style.display = "none";
-//     document.querySelector(".formAccepted").innerHTML = "We've received your message! Will contact you ASAP."
 
 
 
