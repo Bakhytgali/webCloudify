@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="/imgs/cloud.png">
+    <title>My Profile</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="/styles/global.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&family=Raleway:wght@200;300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="/styles/profile.css">
+    <link rel="stylesheet" href="/styles/header.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+</head>
+
+<body>
+
+    <header id="header" class="sticky-top">
+
+        <div class="container">
+
+            <nav class="navbar navbar-expand-lg navbar-dark">
+                <div class="container-fluid">
+                    <a class="navbar-brand fw-bold" href="#" style="color: #00AC8D">Cloudify</a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarNav">
+                        <ul class="navbar-nav ms-auto">
+                            <li class="nav-item">
+                                <a class="nav-link" aria-current="page" href="/index.html">Home</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" aria-current="page" href="./about.html">
+                                    About
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" aria-current="page" href="./news.html">
+                                    News
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link active" aria-current="page" href="#!">
+                                    Profile
+                                </a>
+                            </li>
+                        </ul>
+                        <button type="button" class="btn text-start btn-success" id="moveToTop">Move To Top</button>
+                    </div>
+
+                </div>
+
+            </nav>
+
+
+        </div>
+
+    </header>
+
+    <main id="mainProfile" class="py-5">
+
+        <div class="container">
+
+            <section id="profile" class="text-center">
+                <h1 class="profile-title">
+                    <i class="fa-regular fa-user fa" style="color: #ffffff;"></i>
+                    My Profile
+                </h1>
+
+                <div class="profile-info">
+                    <div class="name-holder">
+                        Name: <span id="profile-name" class="pe-3"></span>
+                    </div>
+                    <div class="surname-holder">
+                        Surname: <span id="profile-surname" class="pe-3"></span>
+                    </div>
+                    <div class="email-holder">
+                        Email: <span id="profile-email"></span>
+                    </div>
+                </div>
+
+            </section>
+
+            <section id="game" class="pt-2 text-center">
+                <div class="container mt-4">
+                    <h1 class="text-center">Actions</h1>
+                    <div class="dropdown">
+                        <button class="btn dropdown-toggle" type="button" id="dropdownMenuButton"
+                            data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Actions list
+                        </button>
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                            <a class="dropdown-item" id="newSongs" href="#">New Songs</a>
+                            <a class="dropdown-item rankingAction" id="hideBtn" href="#">Hide / Show</a>
+                        </div>
+                    </div>
+                    <div class="row pt-4 ranking">
+                        <h3>Rank these songs</h3>
+                        <div class="col-md-6">
+                            <div id="songList" class="list-group">
+                                <p class="list-group-item drag-song">
+                                    <span class="song-name" draggable="true" ondragstart="drag(event)">
+
+                                    </span>
+                                </p>
+                                <p class="list-group-item drag-song">
+                                    <span class="song-name" draggable="true" ondragstart="drag(event)">
+
+                                    </span>
+                                </p>
+                                <p class="list-group-item drag-song">
+                                    <span class="song-name" draggable="true" ondragstart="drag(event)">
+
+                                    </span>
+                                </p>
+                                <p class="list-group-item drag-song">
+                                    <span class="song-name" draggable="true" ondragstart="drag(event)">
+
+                                    </span>
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6 tier-list">
+                            <div id="tierList" class="list-group">
+                                <p class="list-group-item" style="color: yellow" ondrop="drop(event)"
+                                    ondragover="allowDrop(event)">
+                                    S Tier
+                                </p>
+                                <p class="list-group-item" style="color: orange" ondrop="drop(event)"
+                                    ondragover="allowDrop(event)">
+                                    A Tier
+                                </p>
+                                <p class="list-group-item" style="color: darkorange" ondrop="drop(event)"
+                                    ondragover="allowDrop(event)">
+                                    B Tier
+                                </p>
+                                <p class="list-group-item" style="color: red" ondrop="drop(event)"
+                                    ondragover="allowDrop(event)">
+                                    C Tier
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+            </section>
+
+            <section id="quiz" class="pt-4">
+                <div class="container">
+
+                    <div class="quizTitle text-center h3">
+                        Quiz Game
+                    </div>
+
+                    <div class="question-1 question">
+                        <div class="list-group">
+                            <button type="button" class="list-group-item list-group-item-action active"
+                                aria-current="true">
+                                1. What does 'NF' stands for?
+                            </button>
+                            <button type="button" class="list-group-item variant list-group-item-action">Ninja
+                                Frog</button>
+                            <button type="button" class="list-group-item variant list-group-item-action correct">Nathan
+                                Feuerstein</button>
+                            <button type="button" class="list-group-item variant list-group-item-action">
+                                Non Field
+                            </button>
+                            <button type="button" class="list-group-item variant list-group-item-action">
+                                Not Fake
+                            </button>
+                        </div>
+                    </div>
+                    <div class="question-2 question">
+                        <div class="list-group">
+                            <button type="button" class="list-group-item list-group-item-action active"
+                                aria-current="true">
+                                2. Which of these song is not from the "Astroworld"?
+                            </button>
+                            <button type="button" class="list-group-item variant list-group-item-action">
+                                Can't Say
+                            </button>
+                            <button type="button"
+                                class="list-group-item variant list-group-item-action">Stargazing</button>
+                            <button type="button" class="list-group-item variant list-group-item-action correct">
+                                Til Further Notice
+                            </button>
+                            <button type="button" class="list-group-item variant list-group-item-action">
+                                Butterfly Effect
+                            </button>
+                        </div>
+                    </div>
+                    <div class="question-3 question">
+                        <div class="list-group">
+                            <button type="button" class="list-group-item list-group-item-action active"
+                                aria-current="true">
+                                3. Which of these Kali Uchis songs features Don Toliver?
+                            </button>
+                            <button type="button" class="list-group-item variant list-group-item-action">
+                                Blue
+                            </button>
+                            <button type="button" class="list-group-item variant list-group-item-action">
+                                Moonlight
+                            </button>
+                            <button type="button" class="list-group-item variant list-group-item-action correct">
+                                Fantasy
+                            </button>
+                            <button type="button" class="list-group-item variant list-group-item-action">
+                                Telepatia
+                            </button>
+                        </div>
+                    </div>
+                    <div class="question-4 question">
+                        <div class="list-group">
+                            <button type="button" class="list-group-item list-group-item-action active"
+                                aria-current="true">
+                                4. Which of these songs has the most listens? (in Spotify)
+                            </button>
+                            <button type="button" class="list-group-item variant list-group-item-action">
+                                Metro Boomin, Future, Don Toliver - Too Many Nights
+                            </button>
+                            <button type="button" class="list-group-item variant list-group-item-action correct">
+                                NF - The Search
+                            </button>
+                            <button type="button" class="list-group-item variant list-group-item-action">
+                                Travis Scott, Future, 2 Chainz - 3500
+                            </button>
+                            <button type="button" class="list-group-item variant list-group-item-action">
+                                Tyla - Water
+                            </button>
+                        </div>
+                    </div>
+                    <div class="question-5 question">
+                        <div class="list-group">
+                            <button type="button" class="list-group-item list-group-item-action active"
+                                aria-current="true">
+                                5. Which of these songs from Utopia by Travis Scott features Beyonce?
+                            </button>
+                            <button type="button" class="list-group-item variant list-group-item-action">
+                                I Know ?
+                            </button>
+                            <button type="button" class="list-group-item variant list-group-item-action correct">
+                                Delresto (Echoes)
+                            </button>
+                            <button type="button" class="list-group-item variant list-group-item-action">
+                                Hyaena
+                            </button>
+                            <button type="button" class="list-group-item variant list-group-item-action">
+                                God's Country
+                            </button>
+                        </div>
+                    </div>
+                    <div class="question-6 question">
+                        <div class="list-group">
+                            <button type="button" class="list-group-item list-group-item-action active"
+                                aria-current="true">
+                                6. Which of these songs consists the lyric "Metro Metro Metro, bought me a paint from
+                                Basel" ?
+                            </button>
+                            <button type="button" class="list-group-item variant list-group-item-action correct">
+                                Metro Boomin, Young Thug - Metro Spider
+                            </button>
+                            <button type="button" class="list-group-item variant list-group-item-action">
+                                Metro Boomin, Future, Chris Brown - Superhero
+                            </button>
+                            <button type="button" class="list-group-item variant list-group-item-action">
+                                Metro Boomin, Gunna - Space Cadet
+                            </button>
+                            <button type="button" class="list-group-item variant list-group-item-action">
+                                Metro Boomin, 21 Savage - Runnin'
+                            </button>
+                        </div>
+                    </div>
+                    <div class="question-7 question">
+                        <div class="list-group">
+                            <button type="button" class="list-group-item list-group-item-action active"
+                                aria-current="true">
+                                7. Which of these songs is not a soundtrack for a movie?
+                            </button>
+                            <button type="button" class="list-group-item variant list-group-item-action correct">
+                                SZA - Kill Bill
+                            </button>
+                            <button type="button" class="list-group-item variant list-group-item-action">
+                                Metro Boomin, James Blake - Humminbird
+                            </button>
+                            <button type="button" class="list-group-item variant list-group-item-action">
+                                Burna Boy - Alone
+                            </button>
+                            <button type="button" class="list-group-item variant list-group-item-action">
+                                Ado - New Genesis
+                            </button>
+                        </div>
+                    </div>
+                    <div class="question-8 question">
+                        <div class="list-group">
+                            <button type="button" class="list-group-item list-group-item-action active"
+                                aria-current="true">
+                                8. Joji's most listened song is... (in Spotify)
+                            </button>
+                            <button type="button" class="list-group-item variant list-group-item-action correct">
+                                Slow Dancing In The Dark
+                            </button>
+                            <button type="button" class="list-group-item variant list-group-item-action">
+                                Die For You
+                            </button>
+                            <button type="button" class="list-group-item variant list-group-item-action">
+                                Glimpse Of Us
+                            </button>
+                            <button type="button" class="list-group-item variant list-group-item-action">
+                                Yeah Right
+                            </button>
+                        </div>
+                    </div>
+                    <div class="question-9 question">
+                        <div class="list-group">
+                            <button type="button" class="list-group-item list-group-item-action active"
+                                aria-current="true">
+                                9. The first song from The Weeknds "After Hours" album is called...
+                            </button>
+                            <button type="button" class="list-group-item variant list-group-item-action">
+                                After Hours
+                            </button>
+                            <button type="button" class="list-group-item variant list-group-item-action">
+                                Faith
+                            </button>
+                            <button type="button" class="list-group-item variant list-group-item-action">
+                                Blinding Lights
+                            </button>
+                            <button type="button" class="list-group-item variant list-group-item-action correct">
+                                Alone Again
+                            </button>
+                        </div>
+                    </div>
+                    <div class="question-10 question">
+                        <div class="list-group">
+                            <button type="button" class="list-group-item list-group-item-action active"
+                                aria-current="true">
+                                10. Which of these songs is the most listened song in Spotify
+                            </button>
+                            <button type="button" class="list-group-item variant list-group-item-action">
+                                Ed Sheeran - Shape Of You
+                            </button>
+                            <button type="button" class="list-group-item variant list-group-item-action">
+                                Imagine Dragons - Believer
+                            </button>
+                            <button type="button" class="list-group-item variant list-group-item-action">
+                                Luis Fonsi, Daddy Yankee - Despacito
+                            </button>
+                            <button type="button" class="list-group-item variant list-group-item-action correct">
+                                The Weeknd - Blinding Lights
+                            </button>
+                        </div>
+                    </div>
+
+
+                    <button type="button" class="btn checkAnswerBtn mt-5">Get the Score</button>
+
+                    <div class="displayCorrectAnswers mt-4">
+
+                    </div>
+
+                </div>
+            </section>
+
+        </div>
+
+    </main>
+
+    <footer id="footer" style="margin-top: 100px; padding: 15px 0px">
+        <div class="container">
+            <h1 class="footer-brand pb-2 m-0 fw-bold">
+                Cloudify
+            </h1>
+
+            <h4 class="contact-us fw-bold">
+                Contact Us
+            </h4>
+
+            <p class="m-0">Created by Rakhat Bakhytgali in 2023</p>
+            <p class="m-0">omgwtfwat@gmail.com</p>
+            <p class="m-0 fw-bold">
+                <a href="https://t.me/rbkhtgl">Telegram</a>
+            </p>
+            <p class="m-0 fw-bold">
+                <a href="https://github.com/Bakhytgali">Git Hub</a>
+            </p>
+
+        </div>
+    </footer>
+
+    <script src="https://kit.fontawesome.com/dfbc1687b8.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+        integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
+        integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
+        crossorigin="anonymous"></script>
+    <script src="/scripts/profile.js"></script>
+</body>
+
+</html>

@@ -8,6 +8,10 @@ body {
     background-color: #121212;
 }
 
+#aboutUs {
+    margin-top: 150px;
+}
+
 div.about-subtitle {
     letter-spacing: 1.2px;
 }

@@ -48,3 +48,29 @@ h1.profile-title {
         margin-top: 20px;
     }
 }
+
+.list-group-item.list-group-item-action.active {
+    background-color: #00AC8D;
+    border: none;
+}
+
+.question {
+    padding-top: 30px;
+}
+
+.variant {
+    color: #fff;
+}
+
+.checkAnswerBtn {
+    background-color: #00AC8D;
+}
+
+.checkAnswerBtn:hover {
+    background-color: #121212;
+    color: #00AC8D;
+}
+
+.displayCorrectAnswers {
+    font-size: 32px;
+}

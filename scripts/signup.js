@@ -1,62 +1,95 @@
 const nameInput = document.querySelector("#name");
+var nameValid = false;
+const nameRegex = /^[A-Z][a-z]*$/;
+
 const surnameInput = document.querySelector("#surname");
-const emailInput = document.querySelector("#email");
-const submitBtn = document.querySelector("#submitform");
+var surnameValid = false;
+const surnameRegex = /^[A-Z][a-z]*$/;
 
-const nameSurnamePattern = /^[A-Z][a-z]*$/;
-var nameIsCorrect = false;
-var surnameIsCorrect = false;
+let nextBtn = document.querySelector("#nextForm");
 
-const emailPattern = /^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$/;
-var emailIsCorrect = false;
-
-nameInput.addEventListener("keypress", () => {
-    if (nameSurnamePattern.test(nameInput.value)) {
-        nameIsCorrect = true;
+nameInput.addEventListener("blur", () => {
+    if (nameRegex.test(nameInput.value)) {
+        nameValid = true;
     } else {
-        nameIsCorrect = false;
-        document.getElementsByClassName("error")[0].innerHTML = "Invalid name";
+        document.querySelector(".error1").innerHTML = "Name's invalid"
+        nameValid = false;
     }
-    toggleSubmitButton();
+    enableNextButton();
 });
 
-surnameInput.addEventListener("keypress", () => {
-    if (nameSurnamePattern.test(surnameInput.value)) {
-        surnameIsCorrect = true;
-        document.getElementsByClassName("error")[0].textContent = "";
+surnameInput.addEventListener("blur", () => {
+    if (surnameRegex.test(surnameInput.value)) {
+        surnameValid = true;
     } else {
-        surnameIsCorrect = false;
-        document.getElementsByClassName("error")[0].innerHTML = "Invalid surname";
+        document.querySelector(".error1").innerHTML = "Surname's invalid"
+        surnameValid = false;
     }
-    toggleSubmitButton();
+    enableNextButton();
 });
 
-emailInput.addEventListener("keypress", () => {
-    if (emailPattern.test(emailInput.value)) {
-        emailIsCorrect = true;
-        document.getElementsByClassName("error")[0].textContent = "";
-    } else {
-        emailIsCorrect = false;
-        document.getElementsByClassName("error")[0].innerHTML = "Invalid email";
-    }
-    toggleSubmitButton();
-});
-
-function toggleSubmitButton() {
-    if (nameIsCorrect && surnameIsCorrect && emailIsCorrect) {
-        submitBtn.removeAttribute("disabled");
-        document.getElementsByClassName("error")[0].textContent = "";
-    } else {
-        submitBtn.setAttribute("disabled", "disabled");
+function enableNextButton() {
+    if (nextBtn && nameValid && surnameValid) {
+        nextBtn.removeAttribute("disabled");
+        nextBtn.addEventListener("click", () => {
+            document.querySelector(".form-1").style.display = "none";
+            document.querySelector(".spinner-border").removeAttribute("style")
+            secondFormEnable();
+        });
+    } else if (nextBtn) {
+        nextBtn.setAttribute("disabled", "disabled");
     }
 }
 
-submitBtn.addEventListener("click", () => {
-    document.getElementsByClassName("error")[0].textContent = "You've been signed up!";
-    submitBtn.style.display = "none";
-    setInterval(function () {
-        window.open("./index.html", "_self");
-    }, 3000)
+function secondFormEnable() {
+    setInterval(() => {
+        document.querySelector(".spinner-border").style.display = "none";
+        document.querySelector(".form-2").removeAttribute("style")
+    }, 2000)
+}
+
+const email = document.querySelector("#email");
+var emailValid = false;
+const emailRegex = /@[a-zA-Z0-9.-]+\.(com|ru|edu\.kz|outlook\.com)$/;
+
+
+
+const password = document.querySelector("#password");
+var passwordValid = false;
+const passwordRegex = /^[a-zA-Z0-9]{5,}$/;
+
+var submit = document.querySelector("#submitForm");
+
+email.addEventListener("blur", () => {
+    if (emailRegex.test(email.value)) {
+        emailValid = true;
+    } else {
+        document.querySelector(".error2").innerHTML = "The email is not valid";
+    }
+})
+
+password.addEventListener("blur", () => {
+    if (passwordRegex.test(password.value)) {
+        passwordValid = true;
+    } else {
+        document.querySelector(".error2").innerHTML = "The password is not valid";
+    }
+    enableSubmitButton();
 });
 
+
+function enableSubmitButton() {
+    if (passwordValid && emailValid) {
+        submit.removeAttribute("disabled");
+    } else {
+        submit.setAttribute("disabled", "disabled");
+    }
+}
+
+submit.addEventListener("click", () => {
+    document.querySelector(".finished").innerHTML = "You've been successfully signed in!";
+    setInterval(() => {
+        window.open("/index.html", "_self");
+    }, 2000)
+});
 

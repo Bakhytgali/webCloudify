@@ -108,10 +108,37 @@ $("#hideBtn").click(function () {
     if ($(this).hasClass("rankingAction")) {
         $(".ranking").hide();
         $(this).removeClass("rankingAction");
-        $(this).html("Show");
     } else {
         $(".ranking").show();
         $(this).addClass("rankingAction");
-        $(this).val("Hide");
     }
 });
+
+$(document).ready(function () {
+    const variants = Array.from(document.querySelectorAll(".variant"));
+    const choosenAnswers = [];
+
+    let correctAnswers = 0;
+
+    variants.forEach(variant => {
+        variant.addEventListener("click", () => {
+            if (!choosenAnswers.includes(variant)) {
+                choosenAnswers.push(variant);
+                variant.disabled = true;
+            }
+        });
+    });
+
+    document.querySelector(".checkAnswerBtn").addEventListener("click", () => {
+        choosenAnswers.forEach(choosenAnswer => {
+            const isCorrect = choosenAnswer.classList.contains("correct");
+
+            if (isCorrect) {
+                correctAnswers++;
+            }
+        });
+
+        document.querySelector(".displayCorrectAnswers").innerHTML = `Your score is ${correctAnswers} out of 10.`;
+    });
+});
+

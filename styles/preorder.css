@@ -19,7 +19,8 @@ form p {
     row-gap: 40px;
 }
 
-input[type="text"] {
+input[type="text"],
+input[type="password"] {
     background-color: inherit;
     color: #fff;
     border: 1px solid #00AC8D;
@@ -28,6 +29,11 @@ input[type="text"] {
 }
 
 input[type="text"]:focus {
+    outline: none;
+}
+
+
+input[type="password"]:focus {
     outline: none;
 }
 
@@ -40,7 +46,9 @@ button {
 }
 
 @media(max-width: 800px) {
-    input[type="text"] {
+
+    input[type="text"],
+    input[type="password"] {
         padding: 12px 30px;
     }
 }
