@@ -12,7 +12,6 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <link rel="stylesheet" href="./styles/global.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -147,15 +146,8 @@
                     </div>
             </section>
 
-            <section id="dataMonitoring" class="pt-5">
-                <div class="container">
-                    <h4 class="text-center">Your Data</h4>
-                    <div class="row d-flex justify-content-center">
-                        <div class="col-md-6">
-                            <canvas id="myChart"></canvas>
-                        </div>
-                    </div>
-                </div>
+            <section id="quiz">
+
             </section>
 
         </div>
@@ -191,36 +183,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
         integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
         crossorigin="anonymous"></script>
-    <script src="./profile.js"></script>
-    <script src="./"></script>
-    <script>
-        $(document).ready(function () {
-            const data = {
-                labels: ['0-6 AM', '6-12 AM-PM', '12-6 PM', '6-12 PM-AM'],
-                datasets: [
-                    {
-                        label: "Minutes you've spend with us each day",
-                        data: [10, 20, 15, 25],
-                        backgroundColor: 'rgba(75, 192, 192, 0.2)',
-                        borderColor: 'rgba(75, 192, 192, 1)',
-                        borderWidth: 1
-                    }
-                ]
-            };
-            var ctx = document.getElementById('myChart').getContext('2d');
-            var myChart = new Chart(ctx, {
-                type: 'bar',
-                data: data,
-                options: {
-                    scales: {
-                        y: {
-                            beginAtZero: true
-                        }
-                    }
-                }
-            });
-        });
-    </script>
+    <script src="./scripts/profile.js"></script>
 </body>
 
 </html>

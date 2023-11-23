@@ -1,0 +1,21 @@
+body {
+    color: #fff;
+
+    overflow-x: hidden;
+
+    font-family: "Poppins", sans-serif;
+
+    background-color: #121212;
+}
+
+div.about-subtitle {
+    letter-spacing: 1.2px;
+}
+
+div.about-subtitle span {
+    color: #00AC8D;
+}
+
+i.fa-brands {
+    cursor: pointer;
+}
