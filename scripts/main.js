@@ -55,7 +55,7 @@ preorder.addEventListener("click", () => {
 
 const signup = document.querySelector(".signup");
 signup.addEventListener("click", () => {
-    window.open("/htmls/signup.html"); // opens the link in the same window
+    window.open("./htmls/signup.html"); // opens the link in the same window
 });
 
 const meltMyEyez = document.querySelector(".denzel-mm");
