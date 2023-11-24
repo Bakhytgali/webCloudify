@@ -119,10 +119,15 @@
                         <span class="fw-bold">Melt My Eyez See Your Future</span>
                     </h4>
 
-                    <div class="album-cover-wrapper d-flex flex-column align-items-center">
-                        <small>You can click the image to play the song</small>
-                        <img src="./imgs/meltmyeyez.jpeg" alt="" width="30%" class="denzel-mm mt-3">
+                    <div class="album-cover-wrapper d-flex flex-column align-items-center justify-content-center">
+                        <small>You can click the image to play the music video</small>
+                        <img src="./imgs/meltmyeyez.jpeg" alt="" width="20%" class="denzel-mm mt-3">
+                        <video id="fullscreenVideo" controls class="mt-3">
+                            <source src="./Denzel Curry - Walkin (Official Music Video).mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
                     </div>
+
                     <div class="buttons-wrapper">
                         <button type="button" class="btn remind mt-5">Remind Me</button>
                         <button type="button" class="btn preorder mt-5">Preorder</button>
@@ -295,7 +300,34 @@
         crossorigin="anonymous"></script>
     <script src="https://kit.fontawesome.com/dfbc1687b8.js" crossorigin="anonymous"></script>
     <script src="./scripts/main.js">
+    </script>
+    <script>
+        const image = document.querySelector('.denzel-mm');
+        const video = document.getElementById('fullscreenVideo');
 
+        // Function to play the video
+        function playVideo() {
+            video.play();
+        }
+
+        // Function to enter fullscreen
+        function enterFullscreen() {
+            if (video.requestFullscreen) {
+                video.requestFullscreen();
+            } else if (video.mozRequestFullScreen) { /* Firefox */
+                video.mozRequestFullScreen();
+            } else if (video.webkitRequestFullscreen) { /* Chrome, Safari and Opera */
+                video.webkitRequestFullscreen();
+            } else if (video.msRequestFullscreen) { /* IE/Edge */
+                video.msRequestFullscreen();
+            }
+        }
+
+        // Attach click events
+        image.addEventListener('click', function () {
+            playVideo();
+            enterFullscreen();
+        });
     </script>
 </body>
 

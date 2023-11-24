@@ -14,6 +14,8 @@ body {
 
 div.about-subtitle {
     letter-spacing: 1.2px;
+    opacity: 0;
+    transition: opacity 1.5s ease-in-out;
 }
 
 div.about-subtitle span {

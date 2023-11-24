@@ -61,27 +61,6 @@ signup.addEventListener("click", () => {
 const meltMyEyez = document.querySelector(".denzel-mm");
 meltMyEyez.style.cursor = "pointer";
 
-const audio = new Audio("./denzel-curry-walkin (mp3cut.net).mp3");
-let pressed = false;
-let rotation = 0;
-let animationFrameId;
-
-meltMyEyez.addEventListener("click", () => {
-    if (pressed === false) {
-        audio.play();
-        pressed = true;
-        startSpinning();
-    } else {
-        audio.pause();
-        pressed = false;
-        stopSpinning();
-    }
-});
-
-audio.addEventListener("ended", () => {
-    stopSpinning();
-});
-
 meltMyEyez.addEventListener("mouseover", () => {
     meltMyEyez.style.transition = ".5s linear ease-in-out";
     meltMyEyez.style.transform = "rotate(3deg)";

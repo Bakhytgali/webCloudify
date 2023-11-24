@@ -108,7 +108,30 @@
         integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
         crossorigin="anonymous"></script>
     <script src="https://kit.fontawesome.com/dfbc1687b8.js" crossorigin="anonymous"></script>
-    <script src="./scripts/about.js"></script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const fadeInText = document.querySelector('.about-subtitle');
+            fadeInText.style.opacity = 1;
+            const telegramLink = document.querySelector(".fa-telegram");
+            const instagrammLink = document.querySelector(".fa-instagram");
+            const youtubeLink = document.querySelector(".fa-youtube");
+
+
+            telegramLink.addEventListener("click", () => {
+                window.open("https://t.me/rbkhtgl", "_blank");
+            });
+
+            instagrammLink.addEventListener("click", () => {
+                window.open("https://www.instagram.com/rbkhtgl/", "_blank")
+            });
+
+            youtubeLink.addEventListener("click", () => {
+                window.open("https://youtu.be/dQw4w9WgXcQ?si=snhtM7Af52NKRMDr", "_blank")
+            });
+        });
+    </script>
+
 </body>
 
 </html>

@@ -99,3 +99,8 @@ button.preorder {
         flex-direction: column;
     }
 }
+
+video {
+    width: 50%;
+    height: 50%;
+}
