@@ -89,7 +89,7 @@ function enableSubmitButton() {
 submit.addEventListener("click", () => {
     document.querySelector(".finished").innerHTML = "You've been successfully signed in!";
     setInterval(() => {
-        window.open("/index.html", "_self");
+        window.open("../index.html", "_self");
     }, 2000)
 });
 
