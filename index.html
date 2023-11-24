@@ -256,6 +256,19 @@
                 Cloudify
             </h1>
 
+            <button id="myBtn" class="my-3 btn bg-dark text-light">User Agreement</button>
+
+            <!-- The Modal -->
+            <div id="myModal" class="modal">
+
+                <!-- Modal content -->
+                <div class="modal-content">
+                    <span class="close">&times;</span>
+                    <p>The user needs to accept cookie files</p>
+                </div>
+
+            </div>
+
             <h4 class="contact-us fw-bold">
                 Contact Us
             </h4>
@@ -304,13 +317,9 @@
     <script>
         const image = document.querySelector('.denzel-mm');
         const video = document.getElementById('fullscreenVideo');
-
-        // Function to play the video
         function playVideo() {
             video.play();
         }
-
-        // Function to enter fullscreen
         function enterFullscreen() {
             if (video.requestFullscreen) {
                 video.requestFullscreen();
@@ -322,12 +331,26 @@
                 video.msRequestFullscreen();
             }
         }
-
-        // Attach click events
         image.addEventListener('click', function () {
             playVideo();
             enterFullscreen();
         });
+        var modal = document.getElementById("myModal");
+        var btn = document.getElementById("myBtn");
+        var span = document.getElementsByClassName("close")[0];
+        btn.onclick = function () {
+            modal.style.display = "block";
+        }
+
+        span.onclick = function () {
+            modal.style.display = "none";
+        }
+
+        window.onclick = function (event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
     </script>
 </body>
 
